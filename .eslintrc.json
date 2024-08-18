@@ -1,3 +1,33 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    "chrome": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020
+  },
+  "root": true,
+  "extends": ["next/core-web-vitals", "prettier"],
+  "rules": {
+    "no-console": 0,
+    "no-empty": [1, { "allowEmptyCatch": true }],
+    "quotes": [2, "single", { "avoidEscape": true }],
+    "eol-last": 0,
+    "no-multiple-empty-lines": 0,
+    "no-param-reassign": 0,
+    "max-len": 0,
+    "no-shadow": 0,
+    "import/prefer-default-export": 0,
+    "arrow-parens": ["error", "always"],
+    "no-prototype-builtins": 0,
+    "no-restricted-syntax": 0,
+    "guard-for-in": 0,
+    "import/no-unresolved": 0,
+    "import/extensions": 0,
+    "no-continue": 0,
+    "react/no-unescaped-entities": 0
+  }
 }
