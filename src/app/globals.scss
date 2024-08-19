@@ -1,0 +1,45 @@
+body {
+  background-color: #202225;
+  color: #eee;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  width: 80%;
+  max-width: 400px;
+}
+
+h1, h2, h3, h4, label, legend {
+  color: #DC5F00;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+}
+
+fieldset {
+  legend {
+    margin-bottom: .8rem;
+  }
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 48px;
+}
+
+button {
+  background-color: #DC5F00;
+}
+
+input {
+  background-color: #373A40;
+  min-width: 200px;
+}
+
+input[type='text'], button[type='submit'] {
+  height: 40px;
+}
