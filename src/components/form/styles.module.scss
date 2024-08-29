@@ -5,11 +5,11 @@
   width: 100%;
 }
 
-.checkboxContainer {
+.inputContainer {
   display: flex;
   gap: .5rem;
 
-  input[type='checkbox'] {
+  input {
     display: none;
   }
 }

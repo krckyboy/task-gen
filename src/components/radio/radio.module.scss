@@ -2,6 +2,7 @@
   flex: 1 0;
 
   span {
+    text-transform: capitalize;
     padding: .5rem;
     background-color: darken(#373A40, 7%);
     min-width: 60px;
@@ -9,13 +10,17 @@
     justify-content: center;
     cursor: pointer;
     user-select: none;
+    height: 40px;
 
     &:hover {
       background-color: #373A40;
     }
   }
 
-  .active {
-    background-color: #DC5F00;
+  &.active {
+    span {
+      background-color: #DC5F00;
+      color: #fff;
+    }
   }
 }

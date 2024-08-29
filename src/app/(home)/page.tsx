@@ -1,20 +1,20 @@
-import RangeInput from '@/components/RangeInput';
-import Input from '@/components/Input';
+'use client';
 import Heading from '@/app/(home)/_components/heading/Heading';
-import styles from './page.module.scss';
-import FrontBack from '@/components/FrontBack';
+import Form from '@/components/form/Form';
+import { useState } from 'react';
+import { useLoading } from '@/scripts/loading/useLoading';
 
 export default function Home() {
+  const [step, setStep] = useState(0);
+  const { isLoading } = useLoading();
+
   return (
     <main>
+      {isLoading && (
+        <p>Loading...</p>
+      )}
       <Heading />
-      <form className={styles.form}>
-        <RangeInput name={'seniority-level'} label={'Seniority Level'} />
-        <Input name={'technologies'} label={'Technologies'} />
-        <Input name={'deadline'} label={'Deadline'} />
-        <FrontBack />
-        <button type={'submit'}>Generate</button>
-      </form>
+      <Form />
     </main>
   );
 }

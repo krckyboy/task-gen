@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Lato } from 'next/font/google';
 import './globals.scss';
 import 'the-new-css-reset/css/reset.css';
+import { LoadingProvider } from '@/scripts/loading/LoadingContext';
 
 const lato = Lato({ subsets: ['latin'], weight: ['300', '400', '700'] });
 
@@ -17,7 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-    <body className={lato.className}>{children}</body>
+    <LoadingProvider>
+      <body className={lato.className}>{children}</body>
+    </LoadingProvider>
     </html>
   );
 }
