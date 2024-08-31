@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './styles.module.scss';
 
 interface Props {
 }
@@ -25,17 +26,15 @@ const Technologies: React.FC<Props> = () => {
 
   return (
     <div>
-      <label htmlFor={'technologies'}>
+      <label htmlFor={'technologies'} className={styles.label}>
         <span>Technologies</span>
-
-        <div className="tags-container">
+        <div className={styles.tagsContainer}>
           {tags.map((tag, index) => (
-            <span key={index} className="tag">{tag}</span>
+            <span key={index} className={styles.tag}>{tag}</span>
           ))}
         </div>
         <input
           type={'text'}
-          id={'technologies'}
           onChange={handleInputChange}
           onKeyDown={handleKeyPress}
           value={inputValue}

@@ -1,0 +1,38 @@
+.label {
+  gap: initial;
+
+  > span {
+    margin-bottom: 1rem;
+  }
+
+  &:has(.tagsContainer:not(:empty)) .tagsContainer {
+    margin-bottom: 1rem;
+  }
+}
+
+.tagsContainer {
+  display: flex;
+  gap: 2%;
+  row-gap: 4px;
+  max-width: 100%;
+  flex-wrap: wrap;
+  //margin-bottom: 1rem;
+
+}
+
+.tag {
+  color: #DC5F00;
+  background-color: #27292d;
+  padding-inline: .8rem;
+  padding-block: .3rem;
+  border-radius: 36px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-width: 60px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #373A40;
+  }
+}

@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
-import styles from '@/components/form/styles.module.scss';
+import styles from './styles.module.scss';
 import Radio from '@/components/radio/Radio';
 
 interface Props {

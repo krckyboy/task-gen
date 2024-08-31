@@ -2,11 +2,29 @@ import { NextRequest } from 'next/server';
 import OpenAI from 'openai';
 import { z } from 'zod';
 
-// Define the schema for the expected form data
 const FormDataSchema = z.object({
-  seniority: z.number().min(0).max(100),
-  stack: z.string(),
-  technologies: z.array(z.string()).nonempty()
+  'task-complexity-0-to-100': z.coerce.number().min(0).max(100),
+  stack: z.string().min(7),
+  technologies: z.preprocess((value) => {
+    if (typeof value === 'string') {
+      try {
+        const parsedValue = JSON.parse(value);
+
+        // If it's an array, return it filtered
+        if (Array.isArray(parsedValue)) {
+          return parsedValue.filter(Boolean);
+        }
+
+        // If it's not an array, treat it as a single technology
+        return [parsedValue.toString()];
+      } catch (error) {
+        // If parsing fails, fall back to splitting the string
+        const techArray = value.split(',').map(s => s.trim()).filter(Boolean);
+        return techArray.length > 0 ? techArray : [];
+      }
+    }
+    return Array.isArray(value) ? value.filter(Boolean) : [];
+  }, z.array(z.string()))
 });
 
 // Validate OPENAI_API_KEY environment variable
@@ -21,8 +39,6 @@ const openai = new OpenAI({
 export async function POST(request: NextRequest) {
   const formData = await request.formData();
 
-  // @todo Add validation for formData and also
-
   // Create an object to store form data
   const formDataObject: Record<string, unknown> = {};
 
@@ -31,6 +47,8 @@ export async function POST(request: NextRequest) {
   }
 
   try {
+    FormDataSchema.parse(formDataObject);
+
     const chatCompletion = await openai.chat.completions.create({
       messages: [
         {

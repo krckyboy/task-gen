@@ -2,9 +2,10 @@ import React, { FunctionComponent } from 'react';
 import styles from '@/components/form/styles.module.scss';
 import RangeInput from '@/components/RangeInput';
 import Input from '@/components/Input';
-import FrontBackBoth from '@/components/FrontBackBoth';
-import Technologies from '@/components/Technologies';
+import FrontBackBoth from '@/components/front-back-both/FrontBackBoth';
+import Technologies from '@/components/technologies/Technologies';
 import { useLoading } from '@/scripts/loading/useLoading';
+import { TaskGenerationResult } from '@/app/api/generate/project-suggestions/generateTask';
 
 interface Props {
 }
@@ -29,7 +30,7 @@ const Form: FunctionComponent<Props> = () => {
         throw new Error('Failed to generate task');
       }
 
-      const data = await response.json();
+      const data: TaskGenerationResult = await response.json();
       setIsLoading(false);
       console.log('Generated task:', data);
       // Handle success here (e.g., display generated task or redirect)
@@ -44,9 +45,8 @@ const Form: FunctionComponent<Props> = () => {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      <RangeInput name={'complexity'} label={'Task Complexity'} />
+      <RangeInput name={'task-complexity-0-to-100'} label={'Task Complexity'} />
       <Technologies />
-      <Input name={'hours'} label={'Hours to work'} type={'number'} />
       <Input name={'note'} label={'Note'} type={'text'} />
       <FrontBackBoth />
       <button type={'submit'}>Generate</button>
