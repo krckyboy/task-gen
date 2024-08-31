@@ -8,7 +8,7 @@ interface Props {
   label: string;
   id: Stack;
   stack: Stack;
-  handleChange: (e) => void;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Radio: FunctionComponent<Props> = ({ name, label, id, stack, handleChange }) => {
