@@ -16,9 +16,13 @@ const Form: FunctionComponent<Props> = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.target) as FormData;
+    const formData = new FormData(e.currentTarget);
 
     try {
+      if (!formData instanceof FormData) {
+        throw new Error('Invalid formData!');
+      }
+
       validate(formData);
       setIsLoading(true);
 
