@@ -15,8 +15,10 @@ const FrontBackBoth: FunctionComponent<Props> = () => {
   const [stack, setStack] = useState<Stack>(Stack.Frontend);
 
   const handleRadioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.value in Stack) {
-      setStack(e.target.value);
+    const newValue = e.target.value as Stack;
+
+    if (Object.values(Stack).includes(newValue)) {
+      setStack(newValue);
     }
   };
 
