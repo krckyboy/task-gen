@@ -19,10 +19,6 @@ const Form: FunctionComponent<Props> = () => {
     const formData = new FormData(e.currentTarget);
 
     try {
-      if (!formData instanceof FormData) {
-        throw new Error('Invalid formData!');
-      }
-
       validate(formData);
       setIsLoading(true);
 
