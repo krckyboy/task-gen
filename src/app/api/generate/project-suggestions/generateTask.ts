@@ -1,4 +1,5 @@
 import OpenAI from 'openai';
+import { validate } from '@/app/api/generate/project-suggestions/validate';
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
@@ -14,6 +15,8 @@ export interface TaskGenerationResult {
 }
 
 export async function generateTasks(formData: FormData): Promise<string> {
+  const formDataObject = validate(formData);
+
   try {
     const chatCompletion = await openai.chat.completions.create({
       messages: [
@@ -27,7 +30,7 @@ export async function generateTasks(formData: FormData): Promise<string> {
         },
         {
           'role': 'user',
-          'content': `Form Data: ${JSON.stringify(formData)}`
+          'content': `Form Data: ${JSON.stringify(formDataObject)}`
         }
       ],
       model: 'gpt-4o-mini'

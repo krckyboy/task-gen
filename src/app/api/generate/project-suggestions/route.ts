@@ -10,7 +10,6 @@ export async function POST(request: NextRequest) {
       throw new Error('OPENAI_API_KEY environment variable is required.');
     }
 
-    validate(formData);
     const completionResult = await generateTasks(formData);
 
     // Return the completion result as a JSON response

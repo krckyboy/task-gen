@@ -33,4 +33,6 @@ export const validate = (formData: FormData) => {
   }
 
   FormDataSchema.parse(formDataObject);
+
+  return formDataObject
 };
