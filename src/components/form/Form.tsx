@@ -6,6 +6,7 @@ import FrontBackBoth from '@/components/front-back-both/FrontBackBoth';
 import Technologies from '@/components/technologies/Technologies';
 import { useLoading } from '@/scripts/loading/useLoading';
 import { TaskGenerationResult } from '@/app/api/generate/project-suggestions/generateTask';
+import { validate } from '@/app/api/generate/project-suggestions/validate';
 
 interface Props {
 }
@@ -18,6 +19,7 @@ const Form: FunctionComponent<Props> = () => {
     const formData = new FormData(e.target) as FormData;
 
     try {
+      validate(formData);
       setIsLoading(true);
 
       const response = await fetch('/api/generate/project-suggestions', {
@@ -40,8 +42,6 @@ const Form: FunctionComponent<Props> = () => {
       // Handle errors here (e.g., display error message to user)
     }
   };
-
-  // @todo Add FE validation
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>

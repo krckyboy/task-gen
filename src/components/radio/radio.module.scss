@@ -10,7 +10,9 @@
     justify-content: center;
     cursor: pointer;
     user-select: none;
-    height: 40px;
+    height: 48px;
+    display: flex;
+    align-items: center;
 
     &:hover {
       background-color: #373A40;
