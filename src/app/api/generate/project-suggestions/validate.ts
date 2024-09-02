@@ -18,7 +18,7 @@ export const FormDataSchema = z.object({
         return [parsedValue.toString()];
       } catch (error) {
         // If parsing fails, fall back to splitting the string
-        const techArray = value.split(',').map(s => s.trim()).filter(Boolean);
+        const techArray = value.split(',').map((s) => s.trim()).filter(Boolean);
         return techArray.length > 0 ? techArray : [];
       }
     }
