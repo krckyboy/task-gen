@@ -1,5 +1,4 @@
-import { z } from 'zod';
-import { ZodError } from 'zod/lib/ZodError';
+import { z, ZodError } from 'zod';
 
 export const FormDataSchema = z.object({
   'task-complexity-0-to-100': z.coerce.number().min(0).max(100),
