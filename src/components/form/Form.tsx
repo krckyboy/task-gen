@@ -9,7 +9,7 @@ import { TaskGenerationResult } from '@/app/api/generate/project-suggestions/gen
 import { validate } from '@/app/api/generate/project-suggestions/validate';
 import { useProjectSuggestions } from '@/scripts/project/suggestions/useProjectSuggestions';
 import { useSteps } from '@/scripts/steps/useSteps';
-import { ZodError } from 'zod/lib/ZodError';
+import { ZodError } from 'zod';
 
 interface Props {
 }
@@ -26,7 +26,7 @@ const Form: FunctionComponent<Props> = ({}) => {
     try {
       const { error } = validate(formData);
 
-      if (error) {
+      if (error && error instanceof ZodError) {
         const e = error as ZodError;
         // Handle errors
         console.log(e.formErrors.fieldErrors);
