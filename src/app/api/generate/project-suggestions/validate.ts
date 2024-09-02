@@ -35,8 +35,14 @@ export const validate = (formData: FormData) => {
 
   try {
     FormDataSchema.parse(formDataObject);
-  } catch (e: ZodError) {
-    return { error: e };
+  } catch (e) {
+    if (e instanceof ZodError) {
+      return { error: e };
+    }
+
+    // Handle other types of errors
+    console.error('Unexpected error:', e);
+    return { error: 'An unexpected error occurred.' };
   }
 
   return {
