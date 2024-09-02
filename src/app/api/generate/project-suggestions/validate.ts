@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { ZodError } from 'zod/lib/ZodError';
 
 export const FormDataSchema = z.object({
   'task-complexity-0-to-100': z.coerce.number().min(0).max(100),
@@ -22,7 +23,8 @@ export const FormDataSchema = z.object({
       }
     }
     return Array.isArray(value) ? value.filter(Boolean) : [];
-  }, z.array(z.string()))
+  }, z.array(z.string()).min(1)),
+  note: z.string().nullable()
 });
 
 export const validate = (formData: FormData) => {
@@ -32,7 +34,13 @@ export const validate = (formData: FormData) => {
     formDataObject[key] = value;
   }
 
-  FormDataSchema.parse(formDataObject);
+  try {
+    FormDataSchema.parse(formDataObject);
+  } catch (e: ZodError) {
+    return { error: e };
+  }
 
-  return formDataObject
+  return {
+    formDataObject
+  };
 };

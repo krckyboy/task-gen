@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import { Lato } from 'next/font/google';
 import './globals.scss';
 import 'the-new-css-reset/css/reset.css';
-import { LoadingProvider } from '@/scripts/loading/LoadingContext';
+import { ReactNode } from 'react';
+import Providers from '@/scripts/Providers';
 
 const lato = Lato({ subsets: ['latin'], weight: ['300', '400', '700'] });
 
@@ -14,13 +15,13 @@ export const metadata: Metadata = {
 export default function RootLayout({
                                      children
                                    }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en">
-    <LoadingProvider>
+    <Providers>
       <body className={lato.className}>{children}</body>
-    </LoadingProvider>
+    </Providers>
     </html>
   );
 }

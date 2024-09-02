@@ -10,7 +10,7 @@ export interface UseLoadingResult {
 export const useLoading = (): UseLoadingResult => {
   const context = useContext(LoadingContext);
   if (context === undefined) {
-    throw new Error('useLoading must be used within a LoadingProvider');
+    throw new Error('This hook must be used within its provider');
   }
   return context;
 };

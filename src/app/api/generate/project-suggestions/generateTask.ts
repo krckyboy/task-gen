@@ -5,8 +5,8 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
 });
 
-interface GeneratedProject {
-  name: string;
+export interface GeneratedProject {
+  title: string;
   description: string;
 }
 
@@ -15,7 +15,7 @@ export interface TaskGenerationResult {
 }
 
 export async function generateTasks(formData: FormData): Promise<string> {
-  const formDataObject = validate(formData);
+  const { formDataObject } = validate(formData);
 
   try {
     const chatCompletion = await openai.chat.completions.create({

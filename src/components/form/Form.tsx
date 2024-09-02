@@ -7,19 +7,32 @@ import Technologies from '@/components/technologies/Technologies';
 import { useLoading } from '@/scripts/loading/useLoading';
 import { TaskGenerationResult } from '@/app/api/generate/project-suggestions/generateTask';
 import { validate } from '@/app/api/generate/project-suggestions/validate';
+import { useProjectSuggestions } from '@/scripts/project/suggestions/useProjectSuggestions';
+import { useSteps } from '@/scripts/steps/useSteps';
+import { ZodError } from 'zod/lib/ZodError';
 
 interface Props {
 }
 
-const Form: FunctionComponent<Props> = () => {
+const Form: FunctionComponent<Props> = ({}) => {
   const { setIsLoading } = useLoading();
+  const { setProjects } = useProjectSuggestions();
+  const { setStep } = useSteps();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
 
     try {
-      validate(formData);
+      const { error } = validate(formData);
+
+      if (error) {
+        const e = error as ZodError;
+        // Handle errors
+        console.log(e.formErrors.fieldErrors);
+        console.log(error);
+        return;
+      }
       setIsLoading(true);
 
       const response = await fetch('/api/generate/project-suggestions', {
@@ -34,12 +47,12 @@ const Form: FunctionComponent<Props> = () => {
 
       const data: TaskGenerationResult = await response.json();
       setIsLoading(false);
-      console.log('Generated task:', data);
-      // Handle success here (e.g., display generated task or redirect)
+      setProjects(data.projects);
+      setStep(2);
     } catch (error) {
       setIsLoading(false);
+      // @todo Add proper error handling
       console.error('Error:', error);
-      // Handle errors here (e.g., display error message to user)
     }
   };
 
