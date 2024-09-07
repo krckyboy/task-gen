@@ -1,7 +1,7 @@
 'use client';
 import React, { FunctionComponent, useRef } from 'react';
 import styles from './radio.module.scss';
-import { Stack } from '@/components/front-back-both/FrontBackBoth';
+import { Stack } from '@/components/form/front-back-both/FrontBackBoth';
 
 interface Props {
   name: string;

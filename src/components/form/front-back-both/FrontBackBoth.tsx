@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useState } from 'react';
 import styles from './styles.module.scss';
-import Radio from '@/components/radio/Radio';
+import Radio from '@/components/form/radio/Radio';
 
 interface Props {
 }
@@ -12,7 +12,7 @@ export enum Stack {
 }
 
 const FrontBackBoth: FunctionComponent<Props> = () => {
-  const [stack, setStack] = useState<Stack>(Stack.Frontend);
+  const [stack, setStack] = useState<Stack>(Stack.Both);
 
   const handleRadioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value as Stack;
