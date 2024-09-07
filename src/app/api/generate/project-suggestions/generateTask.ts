@@ -23,10 +23,11 @@ export async function generateTasks(formData: FormData): Promise<string> {
         {
           'role': 'system',
           'content': `Your task is to generate a task/project based on the provided criteria as you are to help developers of different experience to come up with something to work on. 
-          Generate 3 projects with a preview of description, without much details, so on the next step they will choose one of the options so you can continue generating it all. 
+          Generate 3 projects with a preview of description, so on the next step they will choose one of the options so you can continue generating it all. 
           Just straight to the point, and let the response by in JSON, so I can just JSON.parse it easily in the API, so no need for MD, just stringified JSON. 
           The projects should be generated in a way so that they are suited for the technologies provided to you.
-          Also, return the data in the format of an object with projects property.`
+          In the description, don't focus so much on the technologies, focus more on what the apps are about in a general manner, what does it do and how it helps its users, but also make sure so you DO mention how technologies come in the play.
+          Also, return the data in the format of an object with projects property. It should have description and title property.`
         },
         {
           'role': 'user',

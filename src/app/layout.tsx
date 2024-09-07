@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import { Lato } from 'next/font/google';
-import './globals.scss';
 import 'the-new-css-reset/css/reset.css';
+import './globals.scss';
 import { ReactNode } from 'react';
 import Providers from '@/scripts/Providers';
+import Loader from '@/components/loader/Loader';
 
 const lato = Lato({ subsets: ['latin'], weight: ['300', '400', '700'] });
 
@@ -20,7 +21,10 @@ export default function RootLayout({
   return (
     <html lang="en">
     <Providers>
-      <body className={lato.className}>{children}</body>
+      <body className={lato.className}>
+      <Loader />
+      {children}
+      </body>
     </Providers>
     </html>
   );

@@ -6,8 +6,8 @@ body {
 }
 
 main {
-  width: 80%;
-  max-width: 400px;
+  width: 90%;
+  max-width: 520px;
 }
 
 h1, h2, h3, h4, label, legend {
@@ -32,6 +32,10 @@ h1 {
 }
 
 button {
+  cursor: pointer;
+}
+
+button[type='submit'] {
   background-color: #DC5F00;
 }
 
