@@ -38,7 +38,7 @@ const Technologies: React.FC<Props> = () => {
   };
 
   const removeTag = (tagToRemove: string) => {
-    setTags(tags.filter(tag => tag !== tagToRemove));
+    setTags(tags.filter((tag) => tag !== tagToRemove));
   };
 
   return (
