@@ -1,7 +1,23 @@
 .container {
   display: none;
+}
 
-  &.collapsed {
-    display: flex;
-  }
+.button {
+  display: flex;
+  gap: 4px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: #373A40;
+  font-weight: bold;
+  color: #DC5F00;
+  height: 48px;
+}
+
+.invert {
+  rotate: 180deg;
+}
+
+.show {
+  display: flex;
 }
