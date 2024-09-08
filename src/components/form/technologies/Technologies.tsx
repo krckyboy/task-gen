@@ -29,8 +29,13 @@ const Technologies: React.FC<Props> = () => {
       setInputValue('');
     }
   };
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+    const relatedTarget = e.relatedTarget as HTMLElement | null;
 
-  const handleBlur = () => {
+    if (!(relatedTarget instanceof HTMLButtonElement && relatedTarget.type === 'submit')) {
+      return;
+    }
+
     if (inputValue.trim() !== '') {
       setTags([...tags, inputValue.trim()]);
       setInputValue('');
