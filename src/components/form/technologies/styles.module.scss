@@ -31,6 +31,13 @@
   text-align: center;
   min-width: 60px;
   cursor: pointer;
+  display: flex;
+
+  .cross {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   &:hover {
     background-color: #373A40;
