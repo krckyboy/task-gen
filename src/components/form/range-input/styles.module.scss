@@ -2,6 +2,7 @@
   height: 6px;
   margin-top: .5rem;
   padding: 0;
+  cursor: pointer;
 
   &::-webkit-slider-thumb {
     background-color: #DC5F00;
@@ -10,5 +11,23 @@
     height: 24px;
     width: 24px;
     border-radius: 50%;
+  }
+}
+
+.complexityValueLabel {
+  color: #eeeeee;
+}
+
+.sliderTicks {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-inline: 12px;
+  margin-top: -4px;
+
+  .tick {
+    width: 2px;
+    height: 16px;
+    background-color: #373A40;
   }
 }

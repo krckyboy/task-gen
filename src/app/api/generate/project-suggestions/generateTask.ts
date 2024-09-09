@@ -27,7 +27,7 @@ export async function generateTasks(formData: FormData): Promise<string> {
           Just straight to the point, and let the response by in JSON, so I can just JSON.parse it easily in the API, so no need for MD, just stringified JSON. 
           The projects should be generated in a way so that they are suited for the technologies provided to you.
           In the description, don't focus so much on the technologies, focus more on what the apps are about in a general manner, what does it do and how it helps its users, but also make sure so you DO mention how technologies come in the play.
-          Make sure to pay attention to complexity of the project, since it goes from 0 (beginner friendly) - 100 (seniors with 4+ years of experience).
+          Make sure to pay attention to complexity of the project, since it goes like: beginner: 0-25; intermediate: 26-50; advanced: 51-75; expert: 76-100.
           Also, return the data in the format of an object with projects property. It should have description and title property.`
         },
         {
