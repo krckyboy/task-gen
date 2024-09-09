@@ -37,6 +37,7 @@ const Technologies: React.FC<Props> = () => {
       setInputValue('');
     }
   };
+
   const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
     const relatedTarget = e.relatedTarget as HTMLElement | null;
 
