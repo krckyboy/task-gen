@@ -44,6 +44,10 @@ input {
   background-color: #373A40;
   min-width: 200px;
   padding-inline: 1rem;
+
+  &::placeholder {
+    color: lighten(#202225, 30%);
+  }
 }
 
 input[type='text'], input[type='date'], input[type='number'], button[type='submit'] {

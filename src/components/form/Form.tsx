@@ -29,7 +29,6 @@ const Form: FunctionComponent<Props> = () => {
 
       if (error && error instanceof ZodError) {
         const e = error as ZodError;
-        // Handle errors
         console.log(e.formErrors.fieldErrors);
         return;
       }
@@ -62,7 +61,7 @@ const Form: FunctionComponent<Props> = () => {
       <form className={`${styles.form} ${collapsed ? styles.collapsed : ''}`} onSubmit={handleSubmit}>
         <RangeInput name={'task-complexity-0-to-100'} label={'Task Complexity'} />
         <Technologies />
-        <Input name={'note'} label={'Note'} type={'text'} />
+        <Input name={'note'} label={'Note'} type={'text'} placeholder={'Generate projects about books'} />
         <FrontBackBoth />
         <button type={'submit'}>Generate</button>
       </form>

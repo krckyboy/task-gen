@@ -73,6 +73,7 @@ const Technologies: React.FC<Props> = () => {
           onKeyDown={handleKeyPress}
           onBlur={handleBlur}
           value={inputValue}
+          placeholder={'Next.js'}
         />
       </label>
       <input

@@ -1,0 +1,13 @@
+.input {
+  height: 6px;
+  margin-top: .5rem;
+
+  &::-webkit-slider-thumb {
+    background-color: #DC5F00;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+  }
+}

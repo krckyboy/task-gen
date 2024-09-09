@@ -22,7 +22,7 @@ export const FormDataSchema = z.object({
       }
     }
     return Array.isArray(value) ? value.filter(Boolean) : [];
-  }, z.array(z.string()).min(1)),
+  }, z.array(z.string()).min(0)),
   note: z.string().nullable()
 });
 
