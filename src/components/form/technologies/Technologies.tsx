@@ -14,16 +14,24 @@ const Technologies: React.FC<Props> = () => {
   };
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter' || e.key === ' ' && inputValue.trim() !== '') {
-      // Prevent form submission
+    const newValue = inputValue.trim();
+
+    if ((e.key === 'Enter' || e.key === ' ' || e.key === ',') && newValue !== '') {
       e.preventDefault();
 
-      if (tags.find((tag) => tag === inputValue.trim())) {
+      const newValueWithoutComma = newValue.replace(',', '');
+
+      if (!newValueWithoutComma || newValueWithoutComma.length < 2) {
         setInputValue('');
         return;
       }
 
-      setTags([...tags, inputValue.trim()]);
+      if (tags.find((tag) => tag === newValue || tag === newValueWithoutComma)) {
+        setInputValue('');
+        return;
+      }
+
+      setTags([...tags, newValueWithoutComma]);
 
       // Clear the input after adding a tag
       setInputValue('');
