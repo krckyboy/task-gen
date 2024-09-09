@@ -3,7 +3,7 @@ import React, { FunctionComponent } from 'react';
 interface Props {
   name: string;
   label: string;
-  placeholder: string;
+  placeholder?: string;
   type?: string;
 }
 
