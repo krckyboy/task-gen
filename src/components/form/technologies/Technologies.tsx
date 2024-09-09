@@ -14,7 +14,7 @@ const Technologies: React.FC<Props> = () => {
   };
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    const newValue = inputValue.trim();
+    const newValue = inputValue.trim().toLowerCase();
 
     if ((e.key === 'Enter' || e.key === ' ' || e.key === ',') && newValue !== '') {
       e.preventDefault();
@@ -26,7 +26,7 @@ const Technologies: React.FC<Props> = () => {
         return;
       }
 
-      if (tags.find((tag) => tag === newValue || tag === newValueWithoutComma)) {
+      if (tags.find((tag) => tag === newValueWithoutComma)) {
         setInputValue('');
         return;
       }
