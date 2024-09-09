@@ -16,8 +16,11 @@ const Technologies: React.FC<Props> = () => {
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     const newValue = inputValue.trim().toLowerCase();
 
-    if ((e.key === 'Enter' || e.key === ' ' || e.key === ',') && newValue !== '') {
-      e.preventDefault();
+    if ((e.key === 'Enter' || e.key === ' ' || e.key === ',' || e.key === 'Tab') && newValue !== '') {
+
+      if (e.key !== 'Tab') {
+        e.preventDefault();
+      }
 
       const newValueWithoutComma = newValue.replace(',', '');
 
