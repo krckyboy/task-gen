@@ -1,7 +1,8 @@
 import { z, ZodError } from 'zod';
+import { formDataToObject } from '@/scripts/formDataToObject';
 
 export const FormDataSchema = z.object({
-  'task-complexity-0-to-100': z.coerce.number().min(0).max(100),
+  taskComplexity: z.coerce.number().min(0).max(100),
   stack: z.string().min(7),
   technologies: z.preprocess((value) => {
     if (typeof value === 'string') {
@@ -26,12 +27,15 @@ export const FormDataSchema = z.object({
   note: z.string().nullable()
 });
 
-export const validate = (formData: FormData) => {
-  const formDataObject: Record<string, unknown> = {};
+export interface FormDataObject {
+  taskComplexity: string;
+  stack: string;
+  technologies: string[];
+  note: string;
+}
 
-  for (const [key, value] of formData.entries()) {
-    formDataObject[key] = value;
-  }
+export const validate = (formData: FormData): FormDataObject => {
+  const formDataObject = formDataToObject(formData);
 
   try {
     FormDataSchema.parse(formDataObject);

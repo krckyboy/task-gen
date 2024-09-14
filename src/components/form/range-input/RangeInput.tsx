@@ -13,6 +13,13 @@ export enum ComplexityLevel {
   Expert = 100,
 }
 
+export const getCurrentComplexity = (value: number): string => {
+  if (value < ComplexityLevel.Beginner) return 'Beginner';
+  if (value < ComplexityLevel.Intermediate) return 'Intermediate';
+  if (value < ComplexityLevel.Advanced) return 'Advanced';
+  return 'Expert';
+};
+
 const RangeInput: FunctionComponent<Props> = ({ name, label }) => {
   const [value, setValue] = useState(ComplexityLevel.Intermediate);
   const [style, setStyle] = useState({
@@ -29,13 +36,6 @@ const RangeInput: FunctionComponent<Props> = ({ name, label }) => {
       background: `linear-gradient(to right, #DC5F00 ${String(progress)}%, #373A40 ${String(progress)}%)`
     });
   }, []);
-
-  const getCurrentComplexity = (value: number): string => {
-    if (value < ComplexityLevel.Beginner) return 'Beginner';
-    if (value < ComplexityLevel.Intermediate) return 'Intermediate';
-    if (value < ComplexityLevel.Advanced) return 'Advanced';
-    return 'Expert';
-  };
 
   return (
     <>
