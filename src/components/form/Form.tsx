@@ -28,7 +28,7 @@ const Form: FunctionComponent<Props> = () => {
     const formData = new FormData(e.currentTarget);
 
     try {
-      const { error } = validate(formData);
+      const { error } = validate(formData as FormData);
 
       if (error && error instanceof ZodError) {
         const e = error as ZodError;

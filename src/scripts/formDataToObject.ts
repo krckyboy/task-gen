@@ -1,10 +1,10 @@
 import { FormDataObject } from '@/app/api/generate/project-suggestions/validate';
 
-export const formDataToObject = (formData): FormDataObject => {
+export const formDataToObject = (formData: FormData): FormDataObject => {
   const formDataObject: FormDataObject | {} = {};
 
   for (const [key, value] of formData.entries()) {
-    if (key === 'technologies') {
+    if (key === 'technologies' && typeof value === 'string') {
       formDataObject[key] = JSON.parse(value);
       continue;
     }

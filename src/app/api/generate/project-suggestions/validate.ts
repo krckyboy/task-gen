@@ -34,7 +34,9 @@ export interface FormDataObject {
   note: string;
 }
 
-export const validate = (formData: FormData): { formDataObject: FormDataObject } => {
+type ValidateResponse = { formDataObject: FormDataObject } | { error: ZodError | string }
+
+export const validate = (formData: FormData): ValidateResponse => {
   const formDataObject = formDataToObject(formData);
 
   try {
