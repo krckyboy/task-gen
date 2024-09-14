@@ -34,7 +34,7 @@ export interface FormDataObject {
   note: string;
 }
 
-type ValidateResponse = { formDataObject: FormDataObject } | { error: ZodError | string }
+type ValidateResponse = { formDataObject: FormDataObject, error: ZodError | string }
 
 export const validate = (formData: FormData): ValidateResponse => {
   const formDataObject = formDataToObject(formData);
@@ -43,15 +43,16 @@ export const validate = (formData: FormData): ValidateResponse => {
     FormDataSchema.parse(formDataObject);
   } catch (e) {
     if (e instanceof ZodError) {
-      return { error: e };
+      return { error: e, formDataObject };
     }
 
     // Handle other types of errors
     console.error('Unexpected error:', e);
-    return { error: 'An unexpected error occurred.' };
+    return { error: 'An unexpected error occurred.', formDataObject };
   }
 
   return {
-    formDataObject
+    formDataObject,
+    error: ''
   };
 };

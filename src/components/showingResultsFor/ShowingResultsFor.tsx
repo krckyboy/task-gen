@@ -11,7 +11,7 @@ const ShowingResultsFor: FunctionComponent<Props> = ({ formDataState }) => {
   const taskComplexity = getCurrentComplexity(Number(formDataState?.taskComplexity));
   return (
     <>
-      <p className={styles.plainText}>Showing results for...</p>
+      <p className={styles.plainText}>Showing results for:</p>
       <div className={styles.tagsContainer}>
         <span className={`${styles.complexity} ${styles.tag}`}>{taskComplexity}</span>
         <span className={`${styles.tag} ${styles.stack}`}>{formDataState.stack}</span>
