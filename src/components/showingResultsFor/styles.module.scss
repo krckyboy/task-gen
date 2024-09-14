@@ -1,0 +1,32 @@
+@import '@/components/form/technologies/styles.module';
+
+.plainText {
+  color: #697777;
+  margin-block: 1rem;
+}
+
+.tagsContainer {
+  @apply tagsContainer;
+}
+
+.tag {
+  @apply tag;
+  font-weight: normal;
+  cursor: text;
+
+  &:hover {
+    background-color: #27292d;
+  }
+}
+
+.complexity {
+  color: brown;
+}
+
+.stack {
+  color: #697777;
+}
+
+.complexity, .stack {
+  border-radius: 0;
+}

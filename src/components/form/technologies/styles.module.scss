@@ -16,8 +16,6 @@
   row-gap: 4px;
   max-width: 100%;
   flex-wrap: wrap;
-  //margin-bottom: 1rem;
-
 }
 
 .tag {
@@ -32,6 +30,7 @@
   min-width: 60px;
   cursor: pointer;
   display: flex;
+  text-transform: lowercase;
 
   .cross {
     display: flex;
