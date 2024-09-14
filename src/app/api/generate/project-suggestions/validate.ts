@@ -34,7 +34,7 @@ export interface FormDataObject {
   note: string;
 }
 
-export const validate = (formData: FormData): FormDataObject => {
+export const validate = (formData: FormData): { formDataObject: FormDataObject } => {
   const formDataObject = formDataToObject(formData);
 
   try {
