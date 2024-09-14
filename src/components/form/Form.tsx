@@ -2,7 +2,7 @@
 import React, { FunctionComponent, useState } from 'react';
 import styles from '@/components/form/styles.module.scss';
 import RangeInput from '@/components/form/range-input/RangeInput';
-import Input from '@/components/form/input/Input';
+import Note from '@/components/form/note/Note';
 import FrontBackBoth from '@/components/form/front-back-both/FrontBackBoth';
 import Technologies from '@/components/form/technologies/Technologies';
 import { useLoading } from '@/scripts/loading/useLoading';
@@ -65,7 +65,7 @@ const Form: FunctionComponent<Props> = () => {
       <form className={`${styles.form} ${collapsed ? styles.collapsed : ''}`} onSubmit={handleSubmit}>
         <RangeInput name={'taskComplexity'} label={'Task Complexity'} />
         <Technologies />
-        <Input name={'note'} label={'Note'} type={'text'} placeholder={'Generate projects about books'} />
+        <Note name={'note'} label={'Note'} type={'text'} placeholder={'Generate projects about books'} />
         <FrontBackBoth />
         <button disabled={isLoading} type={'submit'}>Generate</button>
       </form>

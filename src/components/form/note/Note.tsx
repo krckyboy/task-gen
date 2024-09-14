@@ -7,7 +7,7 @@ interface Props {
   type?: string;
 }
 
-const Input: FunctionComponent<Props> = ({ name, label, type, placeholder }) => {
+const Note: FunctionComponent<Props> = ({ name, label, type, placeholder }) => {
   return (
     <>
       <label htmlFor={name}>
@@ -18,4 +18,4 @@ const Input: FunctionComponent<Props> = ({ name, label, type, placeholder }) => 
   );
 };
 
-export default Input;
+export default Note;
