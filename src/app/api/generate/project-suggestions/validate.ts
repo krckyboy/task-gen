@@ -24,7 +24,7 @@ export const FormDataSchema = z.object({
     }
     return Array.isArray(value) ? value.filter(Boolean) : [];
   }, z.array(z.string()).min(0)),
-  note: z.string().max(200).nullable()
+  note: z.string().max(120).nullable()
 });
 
 export interface FormDataObject {
