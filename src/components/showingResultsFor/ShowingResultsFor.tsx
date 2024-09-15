@@ -15,9 +15,14 @@ const ShowingResultsFor: FunctionComponent<Props> = ({ formDataState }) => {
       <div className={styles.tagsContainer}>
         <span className={`${styles.complexity} ${styles.tag}`}>{taskComplexity}</span>
         <span className={`${styles.tag} ${styles.stack}`}>{formDataState.stack}</span>
-        {formDataState?.technologies.map((technology) => (
-          <span className={styles.tag} key={technology}>{technology}</span>
-        ))}
+        {formDataState.note && (
+          <span className={`${styles.tag} ${styles.note}`}>{formDataState.note}</span>
+        )}
+        <div className={styles.tagsContainer}>
+          {formDataState?.technologies.map((technology) => (
+            <span className={styles.tag} key={technology}>{technology}</span>
+          ))}
+        </div>
       </div>
     </>
   );

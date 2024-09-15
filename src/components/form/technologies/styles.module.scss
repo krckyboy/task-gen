@@ -12,10 +12,10 @@
 
 .tagsContainer {
   display: flex;
-  gap: 2%;
-  row-gap: 4px;
+  gap: 8px;
   max-width: 100%;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .tag {
