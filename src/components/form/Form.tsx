@@ -12,7 +12,7 @@ import { useProjectSuggestions } from '@/scripts/project/suggestions/useProjectS
 import { ZodError } from 'zod';
 import Collapsed from '@/components/form/collapsed/Collapsed';
 import { formDataToObject } from '@/scripts/formDataToObject';
-import ShowingResultsFor from '@/components/showingResultsFor/ShowingResultsFor';
+import ShowingResults from '@/components/showing-results/ShowingResults';
 
 interface Props {
 }
@@ -71,7 +71,7 @@ const Form: FunctionComponent<Props> = () => {
       </form>
       <Collapsed setCollapsed={setCollapsed} collapsed={collapsed} />
       {projects?.length && formDataState && (
-        <ShowingResultsFor formDataState={formDataState} />
+        <ShowingResults formDataState={formDataState} />
       )}
     </>
   );

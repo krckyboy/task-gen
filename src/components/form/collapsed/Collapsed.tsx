@@ -16,13 +16,12 @@ const Collapsed: FunctionComponent<Props> = ({ setCollapsed, collapsed }) => {
     <div className={`${styles.container} ${show ? styles.show : ''}`}>
       {collapsed ?
         <button className={styles.button} onClick={() => setCollapsed(!collapsed)}>
+          <span>Show Form</span>
           <Image alt={'Arrow pointing down'}
                  width={16}
                  height={16}
                  src={'/images/arrow-down.svg'}
-                 className={styles.goBack}
           />
-          <span>Back to Form</span>
         </button>
         :
         <button className={`${styles.button} ${styles.buttonToCollapse}`} onClick={() => setCollapsed(!collapsed)}>

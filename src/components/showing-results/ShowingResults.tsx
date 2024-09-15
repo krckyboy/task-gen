@@ -7,7 +7,7 @@ interface Props {
   formDataState: FormDataObject;
 }
 
-const ShowingResultsFor: FunctionComponent<Props> = ({ formDataState }) => {
+const ShowingResults: FunctionComponent<Props> = ({ formDataState }) => {
   const taskComplexity = getCurrentComplexity(Number(formDataState?.taskComplexity));
   return (
     <>
@@ -28,4 +28,4 @@ const ShowingResultsFor: FunctionComponent<Props> = ({ formDataState }) => {
   );
 };
 
-export default ShowingResultsFor;
+export default ShowingResults;
