@@ -6,15 +6,22 @@
   display: flex;
   gap: 4px;
   width: 100%;
-  justify-content: center;
   align-items: center;
-  background-color: #373A40;
   font-weight: bold;
   color: #DC5F00;
   height: 48px;
 }
 
-.invert {
+.buttonToCollapse {
+  justify-content: center;
+  background-color: #373A40;
+}
+
+.goBack {
+  rotate: 90deg;
+}
+
+.toCollapseForm {
   rotate: 180deg;
 }
 

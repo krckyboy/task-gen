@@ -10,20 +10,31 @@ interface Props {
 
 const Collapsed: FunctionComponent<Props> = ({ setCollapsed, collapsed }) => {
   const { projects } = useProjectSuggestions();
-  const text = collapsed ? 'Show Form' : 'Hide Form';
   const show = projects?.length;
 
   return (
     <div className={`${styles.container} ${show ? styles.show : ''}`}>
-      <button className={styles.button} onClick={() => setCollapsed(!collapsed)}>
-        <span>{text}</span>
-        <Image alt={'Arrow pointing down'}
-               width={16}
-               height={16}
-               src={'/images/arrow-down.svg'}
-               className={!collapsed ? styles.invert : ''}
-        />
-      </button>
+      {collapsed ?
+        <button className={styles.button} onClick={() => setCollapsed(!collapsed)}>
+          <Image alt={'Arrow pointing down'}
+                 width={16}
+                 height={16}
+                 src={'/images/arrow-down.svg'}
+                 className={styles.goBack}
+          />
+          <span>Back to Form</span>
+        </button>
+        :
+        <button className={`${styles.button} ${styles.buttonToCollapse}`} onClick={() => setCollapsed(!collapsed)}>
+          <span>Collapse Form</span>
+          <Image alt={'Arrow pointing up'}
+                 width={16}
+                 height={16}
+                 src={'/images/arrow-down.svg'}
+                 className={styles.toCollapseForm}
+          />
+        </button>
+      }
     </div>
   );
 };
