@@ -35,6 +35,8 @@ export async function generateTasks(formData: FormData): Promise<string> {
           as if you are explaining it to a project manager - what does it do and how it helps its users,
           but also make sure so you take into account that technologies mentioned are suited for the project.
           
+          Make sure to use simple words so it's really easy to understand.
+          
           Make sure to pay attention to the complexity of the project, since it goes like: beginner: 0-25; 
           intermediate: 26-50; advanced: 51-75; expert: 76-100.
           
