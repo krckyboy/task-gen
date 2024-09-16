@@ -1,8 +1,15 @@
 @import '@/components/form/technologies/styles.module';
+@import '@/styles/mixins';
+
+.container {
+  @include commonContainer;
+}
 
 .plainText {
-  color: #697777;
   margin-block: 1rem;
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 1rem;
 }
 
 .tagsContainer {

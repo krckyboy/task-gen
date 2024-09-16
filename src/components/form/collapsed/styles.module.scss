@@ -1,5 +1,12 @@
+@import '@/styles/mixins';
+
 .container {
+  @include commonContainer;
   display: none;
+}
+
+.shown {
+  margin-bottom: 2rem;
 }
 
 .button {
@@ -10,11 +17,6 @@
   font-weight: bold;
   color: #DC5F00;
   height: 48px;
-}
-
-.buttonToCollapse {
-  justify-content: center;
-  background-color: #373A40;
 }
 
 .toCollapseForm {

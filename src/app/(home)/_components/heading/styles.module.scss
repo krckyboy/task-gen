@@ -1,7 +1,18 @@
+@import '@/styles/mixins';
+
 .container {
+  @include commonContainer;
   margin-top: 6rem;
   margin-bottom: 4rem;
   gap: 1rem;
-  display: flex;
-  flex-direction: column;
+
+  h1 {
+    font-weight: 700;
+    font-size: 40px;
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: normal;
+  }
 }

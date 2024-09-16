@@ -7,8 +7,8 @@ interface Props {
 const Heading: FunctionComponent<Props> = () => {
   return (
     <div className={styles.container}>
-      <h1>Generate Project</h1>
-      <p>Taskify will help you set things up</p>
+      <h1>Generate Your Next Project</h1>
+      <p>Fill in the details below, and let our AI suggest the best project for you.</p>
     </div>
   );
 };

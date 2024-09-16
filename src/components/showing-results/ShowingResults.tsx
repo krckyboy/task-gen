@@ -10,8 +10,8 @@ interface Props {
 const ShowingResults: FunctionComponent<Props> = ({ formDataState }) => {
   const taskComplexity = getCurrentComplexity(Number(formDataState?.taskComplexity));
   return (
-    <>
-      <p className={styles.plainText}>Results for:</p>
+    <div className={styles.container}>
+      <h2 className={styles.plainText}>Suggested Projects</h2>
       <div className={styles.tagsContainer}>
         <span className={`${styles.complexity} ${styles.tag}`}>{taskComplexity}</span>
         <span className={`${styles.tag} ${styles.stack}`}>{formDataState.stack}</span>
@@ -24,7 +24,7 @@ const ShowingResults: FunctionComponent<Props> = ({ formDataState }) => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
