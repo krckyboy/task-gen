@@ -3,7 +3,6 @@
 .formProjectsContainer {
   @media (min-width: $breakpoint-for-layout-change) {
     display: flex;
-    gap: 10%;
     justify-content: space-between;
   }
 }
