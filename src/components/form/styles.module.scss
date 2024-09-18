@@ -1,4 +1,5 @@
 @import '@/styles/mixins';
+@import '@/styles/vars';
 
 .form {
   @include commonContainer;
@@ -6,9 +7,19 @@
 
   &.collapsed {
     display: none;
+
+    @media (min-width: $breakpoint-for-layout-change) {
+      display: flex;
+    }
   }
 }
 
 .collapsed {
   display: flex;
+}
+
+.collapsedAndResultsContainer {
+  @media (min-width: $breakpoint-for-layout-change) {
+    display: none;
+  }
 }
