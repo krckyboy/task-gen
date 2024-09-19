@@ -1,15 +1,10 @@
 @import '@/styles/mixins';
-@import '@/styles/vars';
 
 .container {
   @include commonContainer;
   margin-top: 2rem;
   gap: 3rem;
   padding-bottom: 4rem;
-
-  @media (min-width: $breakpoint-for-layout-change) {
-    margin-top: initial;
-  }
 }
 
 .project {
