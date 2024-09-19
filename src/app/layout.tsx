@@ -5,6 +5,8 @@ import '../styles/globals.scss';
 import { ReactNode } from 'react';
 import Providers from '@/scripts/Providers';
 import Loader from '@/components/loader/Loader';
+import Header from '@/components/header/Header';
+import Footer from '@/components/footer/Footer';
 
 const lato = Lato({ subsets: ['latin'], weight: ['300', '400', '700'] });
 
@@ -23,7 +25,9 @@ export default function RootLayout({
     <Providers>
       <body className={lato.className}>
       <Loader />
+      <Header />
       {children}
+      <Footer />
       </body>
     </Providers>
     </html>
