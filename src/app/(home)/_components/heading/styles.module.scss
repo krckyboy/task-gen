@@ -2,9 +2,13 @@
 
 .container {
   @include commonContainer;
-  margin-top: 6rem;
+  max-width: 520px;
   margin-bottom: 4rem;
   gap: 1rem;
+
+  @media (min-width: $breakpoint-for-layout-change) {
+    max-width: 520px;
+  }
 
   h1 {
     font-weight: 700;

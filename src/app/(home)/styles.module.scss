@@ -1,0 +1,8 @@
+@import '@/styles/vars';
+
+.formProjectsContainer {
+  @media (min-width: $breakpoint-for-layout-change) {
+    display: flex;
+    justify-content: space-between;
+  }
+}

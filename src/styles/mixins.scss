@@ -1,7 +1,15 @@
+@import './vars';
+
 @mixin commonContainer {
   display: flex;
   flex-direction: column;
   width: 100%;
+  max-width: 520px;
   margin-inline: auto;
-  max-width: 600px;
+
+  @media (min-width: $breakpoint-for-layout-change) {
+    max-width: 440px;
+    justify-content: flex-start;
+    margin-inline: initial;
+  }
 }
