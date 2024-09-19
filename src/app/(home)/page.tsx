@@ -1,4 +1,3 @@
-'use client';
 import Heading from '@/app/(home)/_components/heading/Heading';
 import Form from '@/components/form/Form';
 import Projects from '@/components/projects/Projects';
