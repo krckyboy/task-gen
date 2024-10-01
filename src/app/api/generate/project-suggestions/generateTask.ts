@@ -25,7 +25,7 @@ export async function generateTasks(formData: FormData): Promise<string> {
           Your task is to generate a task/project based on the provided criteria as you are to help developers of 
           different experience to come up with something to work on. 
           
-          Generate no more than 4 projects with a preview of description (with the biggest variety being those 4).
+          Generate no more than 10 projects with a preview of description, but you can generate less if it makes sense. Quality over quantity.
           
           Let the response by in JSON, so I can just JSON.parse it easily in the API, so no need for MD, just stringified JSON. 
           

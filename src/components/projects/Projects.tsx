@@ -21,7 +21,7 @@ const Projects: FunctionComponent<Props> = () => {
           </div>
         ))
       )}
-      {isLoading && Array.from({ length: 4 }).map((_, index) => (
+      {isLoading && Array.from({ length: 5 }).map((_, index) => (
         <div className={styles.skeletonProject} key={index}>
           <h3 className={styles.skeletonTitle}></h3>
           <p className={styles.skeletonDescription}></p>
