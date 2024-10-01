@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react';
 import styles from './styles.module.scss';
 import Image from 'next/image';
 import { useProjectSuggestions } from '@/scripts/project/suggestions/useProjectSuggestions';
+import { useLoading } from '@/scripts/loading/useLoading';
 
 interface Props {
   setCollapsed: (collapsed: boolean) => void;
@@ -10,7 +11,9 @@ interface Props {
 
 const Collapsed: FunctionComponent<Props> = ({ setCollapsed, collapsed }) => {
   const { projects } = useProjectSuggestions();
-  const show = projects?.length;
+  const { isLoading } = useLoading();
+
+  const show = projects?.length || isLoading;
 
   return (
     <div className={`${styles.container} ${!collapsed ? styles.shown : ''} ${show ? styles.show : ''}`}>

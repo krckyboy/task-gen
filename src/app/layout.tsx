@@ -4,7 +4,6 @@ import 'the-new-css-reset/css/reset.css';
 import '../styles/globals.scss';
 import { ReactNode } from 'react';
 import Providers from '@/scripts/Providers';
-import Loader from '@/components/loader/Loader';
 import Header from '@/components/header/Header';
 import Footer from '@/components/footer/Footer';
 
@@ -24,7 +23,6 @@ export default function RootLayout({
     <html lang="en">
     <Providers>
       <body className={lato.className}>
-      <Loader />
       <Header />
       {children}
       <Footer />

@@ -7,20 +7,54 @@
   padding-bottom: 4rem;
 }
 
-.project {
+.project, .skeletonProject {
   border-left: 4px solid #697777;
   padding-left: 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
 
-  .title {
-    font-weight: bold;
-    color: #697777;
-  }
+.title {
+  font-weight: bold;
+  color: #697777;
+}
 
-  .description {
-    font-size: 14px;
-    font-weight: 300;
+.description {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.skeletonProject {
+  min-height: 6.5em;
+  animation: skeleton-loading .5s linear infinite alternate;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  border-left: none;
+}
+
+.skeletonTitle {
+  max-height: 1.5em;
+  width: 30%;
+  flex: 1 0 20%;
+}
+
+.skeletonDescription {
+  max-height: 4em;
+  flex: 1 0 60%;
+}
+
+.skeletonTitle, .skeletonDescription {
+  background: linear-gradient(110deg, #2e3334 8%, #474c4d 18%, #2e3334 33%);
+  border-radius: 5px;
+  background-size: 200% 100%;
+  animation: 1.5s skeleton-loading linear infinite;
+  display: flex;
+}
+
+@keyframes skeleton-loading {
+  to {
+    background-position-x: -200%;
   }
 }

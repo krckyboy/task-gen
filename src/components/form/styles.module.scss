@@ -3,12 +3,8 @@
 .form {
   @include commonContainer;
   gap: 2rem;
-
-  &.collapsed {
-    display: none;
-  }
 }
 
 .collapsed {
-  display: flex;
+  display: none;
 }
