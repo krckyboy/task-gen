@@ -37,6 +37,8 @@ const Form: FunctionComponent<Props> = () => {
       }
 
       setIsLoading(true);
+      setFormDataState(formDataToObject(formData));
+      setCollapsed(true);
 
       const response = await fetch('/api/generate/project-suggestions', {
         method: 'POST',
@@ -48,11 +50,10 @@ const Form: FunctionComponent<Props> = () => {
         throw new Error('Failed to generate task');
       }
 
+
       const data: TaskGenerationResult = await response.json();
       setIsLoading(false);
       setProjects(data.projects);
-      setFormDataState(formDataToObject(formData));
-      setCollapsed(true);
     } catch (error) {
       setIsLoading(false);
       // @todo Add proper error handling
@@ -70,7 +71,7 @@ const Form: FunctionComponent<Props> = () => {
         <button disabled={isLoading} type={'submit'}>Generate</button>
       </form>
       <Collapsed setCollapsed={setCollapsed} collapsed={collapsed} />
-      {projects?.length && formDataState && (
+      {formDataState && (
         <ShowingResults formDataState={formDataState} />
       )}
     </>

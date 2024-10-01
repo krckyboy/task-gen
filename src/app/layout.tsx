@@ -24,7 +24,6 @@ export default function RootLayout({
     <html lang="en">
     <Providers>
       <body className={lato.className}>
-      <Loader />
       <Header />
       {children}
       <Footer />
