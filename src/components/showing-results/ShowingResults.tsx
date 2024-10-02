@@ -1,14 +1,20 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, ReactNode } from 'react';
 import { getCurrentComplexity } from '@/components/form/range-input/RangeInput';
 import { FormDataObject } from '@/app/api/generate/project-suggestions/validate';
 import styles from './styles.module.scss';
 
 interface Props {
-  formDataState: FormDataObject;
+  formDataState: FormDataObject | null;
+  showForm: ReactNode;
 }
 
-const ShowingResults: FunctionComponent<Props> = ({ formDataState }) => {
+const ShowingResults: FunctionComponent<Props> = ({ formDataState, showForm }) => {
   const taskComplexity = getCurrentComplexity(Number(formDataState?.taskComplexity));
+
+  if (!formDataState) {
+    return null;
+  }
+
   return (
     <div className={styles.container}>
       <h2 className={styles.plainText}>Suggested Projects</h2>
@@ -24,6 +30,7 @@ const ShowingResults: FunctionComponent<Props> = ({ formDataState }) => {
           ))}
         </div>
       </div>
+      {showForm}
     </div>
   );
 };

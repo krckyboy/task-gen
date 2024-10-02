@@ -10,9 +10,10 @@ import { TaskGenerationResult } from '@/app/api/generate/project-suggestions/gen
 import { FormDataObject, validate } from '@/app/api/generate/project-suggestions/validate';
 import { useProjectSuggestions } from '@/scripts/project/suggestions/useProjectSuggestions';
 import { ZodError } from 'zod';
-import Collapsed from '@/components/form/collapsed/Collapsed';
 import { formDataToObject } from '@/scripts/formDataToObject';
 import ShowingResults from '@/components/showing-results/ShowingResults';
+import ShowForm from '@/components/collapse-and-show-form/show-form/ShowForm';
+import CollapseForm from '@/components/collapse-and-show-form/collapse-form/CollapseForm';
 
 interface Props {
 }
@@ -50,7 +51,6 @@ const Form: FunctionComponent<Props> = () => {
         throw new Error('Failed to generate task');
       }
 
-
       const data: TaskGenerationResult = await response.json();
       setIsLoading(false);
       setProjects(data.projects);
@@ -68,12 +68,14 @@ const Form: FunctionComponent<Props> = () => {
         <Technologies />
         <Note name={'note'} label={'Note'} type={'text'} placeholder={'Generate projects about books'} />
         <FrontBackBoth />
-        <button disabled={isLoading} type={'submit'}>Generate</button>
+        <div>
+          <button disabled={isLoading} type={'submit'}>Generate</button>
+          <CollapseForm setCollapsed={setCollapsed} collapsed={collapsed} />
+        </div>
       </form>
-      <Collapsed setCollapsed={setCollapsed} collapsed={collapsed} />
-      {formDataState && (
-        <ShowingResults formDataState={formDataState} />
-      )}
+      <ShowingResults formDataState={formDataState}
+                      showForm={<ShowForm setCollapsed={setCollapsed} collapsed={collapsed} />}
+      />
     </>
   );
 };

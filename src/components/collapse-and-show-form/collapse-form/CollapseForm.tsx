@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import styles from '@/components/form/collapsed/styles.module.scss';
+import styles from '@/components/collapse-and-show-form/styles.module.scss';
 import Image from 'next/image';
 
 interface Props {
@@ -7,21 +7,22 @@ interface Props {
   collapsed: boolean;
 }
 
-const ShowForm: FunctionComponent<Props> = ({ setCollapsed, collapsed }) => {
-  if (!collapsed) {
+const CollapseForm: FunctionComponent<Props> = ({ setCollapsed, collapsed }) => {
+  if (collapsed) {
     return null;
   }
 
   return (
     <button className={styles.button} onClick={() => setCollapsed(!collapsed)}>
-      <span>Show Form</span>
-      <Image alt={'Arrow pointing down'}
+      <span>Collapse Form</span>
+      <Image alt={'Arrow pointing up'}
              width={16}
              height={16}
              src={'/images/arrow-down.svg'}
+             className={styles.toCollapseForm}
       />
     </button>
   );
 };
 
-export default ShowForm;
+export default CollapseForm;
