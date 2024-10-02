@@ -1,8 +1,9 @@
 import React, { FunctionComponent } from 'react';
 import styles from './styles.module.scss';
-import Image from 'next/image';
 import { useProjectSuggestions } from '@/scripts/project/suggestions/useProjectSuggestions';
 import { useLoading } from '@/scripts/loading/useLoading';
+import ShowForm from '@/components/form/collapsed/show-form/ShowForm';
+import CollapseForm from '@/components/form/collapsed/collapse-form/CollapseForm';
 
 interface Props {
   setCollapsed: (collapsed: boolean) => void;
@@ -17,26 +18,8 @@ const Collapsed: FunctionComponent<Props> = ({ setCollapsed, collapsed }) => {
 
   return (
     <div className={`${styles.container} ${!collapsed ? styles.shown : ''} ${show ? styles.show : ''}`}>
-      {collapsed ?
-        <button className={styles.button} onClick={() => setCollapsed(!collapsed)}>
-          <span>Show Form</span>
-          <Image alt={'Arrow pointing down'}
-                 width={16}
-                 height={16}
-                 src={'/images/arrow-down.svg'}
-          />
-        </button>
-        :
-        <button className={styles.button} onClick={() => setCollapsed(!collapsed)}>
-          <span>Collapse Form</span>
-          <Image alt={'Arrow pointing up'}
-                 width={16}
-                 height={16}
-                 src={'/images/arrow-down.svg'}
-                 className={styles.toCollapseForm}
-          />
-        </button>
-      }
+      <ShowForm setCollapsed={setCollapsed} collapsed={collapsed} />
+      <CollapseForm setCollapsed={setCollapsed} collapsed={collapsed} />
     </div>
   );
 };
