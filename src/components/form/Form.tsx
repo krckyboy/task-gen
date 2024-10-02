@@ -70,7 +70,7 @@ const Form: FunctionComponent<Props> = () => {
         <FrontBackBoth />
         <div>
           <button disabled={isLoading} type={'submit'}>Generate</button>
-          <CollapseForm setCollapsed={setCollapsed} collapsed={collapsed} />
+          {projects?.length && <CollapseForm setCollapsed={setCollapsed} collapsed={collapsed} />}
         </div>
       </form>
       <ShowingResults formDataState={formDataState}
