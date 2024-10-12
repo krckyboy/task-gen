@@ -8,7 +8,7 @@ const Heading: FunctionComponent<Props> = () => {
   return (
     <div className={styles.container}>
       <h1>Generate Your Next Project</h1>
-      <p>Fill in the details below, and let our AI suggest the best project for you.</p>
+      <p>Fill in the details below, and we will generate the best project for you.</p>
     </div>
   );
 };
