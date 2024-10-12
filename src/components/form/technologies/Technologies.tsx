@@ -62,31 +62,35 @@ const Technologies: React.FC<Props> = () => {
     <div>
       <label htmlFor={'technologies'} className={styles.label}>
         <span>Technologies</span>
-        <div className={styles.tagsContainer}>
-          {tags.map((tag, index) => (
-            <div key={index} className={styles.tag}>
-              <span>{tag}</span>
-              <button
-                type="button"
-                onClick={() => removeTag(tag)}
-                className={styles.cross}
-              >
-                <Image alt={'X'}
-                       width={14}
-                       height={14}
-                       src={'/images/cross.svg'}
-                /></button>
+        <div className={styles.tagsAndInputContainer}>
+          {Boolean(tags.length) && (
+            <div className={styles.tagsContainer}>
+              {tags.map((tag, index) => (
+                <div key={index} className={styles.tag}>
+                  <span>{tag}</span>
+                  <button
+                    type="button"
+                    onClick={() => removeTag(tag)}
+                    className={styles.cross}
+                  >
+                    <Image alt={'X'}
+                           width={14}
+                           height={14}
+                           src={'/images/cross.svg'}
+                    /></button>
+                </div>
+              ))}
             </div>
-          ))}
+          )}
+          <input
+            type={'text'}
+            onChange={handleInputChange}
+            onKeyDown={handleKeyPress}
+            onBlur={handleBlur}
+            value={inputValue}
+            placeholder={'Next.js'}
+          />
         </div>
-        <input
-          type={'text'}
-          onChange={handleInputChange}
-          onKeyDown={handleKeyPress}
-          onBlur={handleBlur}
-          value={inputValue}
-          placeholder={'Next.js'}
-        />
       </label>
       <input
         type="hidden"

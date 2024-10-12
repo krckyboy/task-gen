@@ -4,10 +4,6 @@
   > span {
     margin-bottom: 1rem;
   }
-
-  &:has(.tagsContainer:not(:empty)) .tagsContainer {
-    margin-bottom: 1rem;
-  }
 }
 
 .tagsContainer {
@@ -16,6 +12,16 @@
   max-width: 100%;
   flex-wrap: wrap;
   width: 100%;
+}
+
+.tagsAndInputContainer {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  input {
+    width: 100%;
+  }
 }
 
 .tag {
@@ -29,7 +35,7 @@
   text-align: left;
   min-width: 60px;
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   text-transform: lowercase;
 
   .cross {
