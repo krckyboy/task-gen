@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ProjBoost - Project Generator for Developers
 
-## Getting Started
+ProjBoost is an innovative web application designed to help developers of all skill levels find exciting projects to work on. Whether you're a student looking to practice coding skills or an experienced programmer seeking new challenges, ProjBoost aims to inspire creativity and productivity.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Customizable Project Generation**: Generate tasks based on seniority level, technology stack, and project type
+- **AI-Powered Guidance**: Receive AI-generated solutions and guidance throughout the development process
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**WIP**:
+- **Integrated Mentorship**: Access mentorship from seasoned engineers (premium feature)
+- **Flexible Learning Paths**: Adaptive learning paths tailored to individual progress and needs
+- **Project Export**: Easily export project details in various formats (PDF, MD, etc.)
+- **Integration with Tutorials**: Connects to existing tutorial content for comprehensive learning
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How It Works
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Users input their preferences (seniority, technologies, project type, etc.)
+2. ProjBoost generates a list of suitable projects
+3. **WIP**: Users can preview and select a project
+4. **WIP** Detailed project specifications and guidance are provided
+5. **WIP** Optional premium features unlock advanced functionalities
 
-## Learn More
+## Technology Stack
 
-To learn more about Next.js, take a look at the following resources:
+- Frontend: Next.js 14 with TypeScript
+- Backend: Server components and API routes
+- Database: To be determined (considering MongoDB or PostgreSQL)
+- Authentication: User fingerprinting for free tier, full auth for premium
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Development Status
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+This project is currently in the planning phase. I'm actively working on designing the core features and architecture.
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+We welcome contributions! Please check our contributing guide for more information.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+
+[To be determined]
+
+---
+
+This README is a work in progress. Stay tuned for updates as I develop ProjBoost further!
