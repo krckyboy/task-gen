@@ -2,6 +2,9 @@
 
 ProjBoost is an innovative web application designed to help developers of all skill levels find exciting projects to work on. Whether you're a student looking to practice coding skills or an experienced programmer seeking new challenges, ProjBoost aims to inspire creativity and productivity.
 
+### Important: 
+This project is still WIP! Major features are missing, and the existing ones can be further optimized (UX and code wise).
+
 ## Features
 
 - **Customizable Project Generation**: Generate tasks based on seniority level, technology stack, and project type
