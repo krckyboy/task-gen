@@ -1,5 +1,5 @@
 import OpenAI from 'openai';
-import { validate } from '@/app/api/generate/project-suggestions/validate';
+import { validate } from '@/app/api/project-suggestions/validate';
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY

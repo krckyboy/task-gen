@@ -1,6 +1,6 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 import { getCurrentComplexity } from '@/components/form/range-input/RangeInput';
-import { FormDataObject } from '@/app/api/generate/project-suggestions/validate';
+import { FormDataObject } from '@/app/api/project-suggestions/validate';
 import styles from './styles.module.scss';
 
 interface Props {

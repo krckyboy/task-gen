@@ -1,7 +1,7 @@
 'use client';
 import { useContext } from 'react';
 import { ProjectSuggestionsContext } from './ProjectSuggestionsContext';
-import { GeneratedProject } from '@/app/api/generate/project-suggestions/generateTask';
+import { GeneratedProject } from '@/app/api/project-suggestions/generateTask';
 
 export interface UseProjectSuggestionsResult {
   projects: GeneratedProject[] | null;

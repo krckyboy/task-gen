@@ -1,4 +1,4 @@
-import { FormDataObject } from '@/app/api/generate/project-suggestions/validate';
+import { FormDataObject } from '@/app/api/project-suggestions/validate';
 
 export const formDataToObject = (formData: FormData): FormDataObject => {
   const formDataObject: Partial<Record<string, unknown>> & Partial<FormDataObject> = {};

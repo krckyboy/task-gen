@@ -6,8 +6,8 @@ import Note from '@/components/form/note/Note';
 import FrontBackBoth from '@/components/form/front-back-both/FrontBackBoth';
 import Technologies from '@/components/form/technologies/Technologies';
 import { useLoading } from '@/scripts/loading/useLoading';
-import { TaskGenerationResult } from '@/app/api/generate/project-suggestions/generateTask';
-import { FormDataObject, validate } from '@/app/api/generate/project-suggestions/validate';
+import { TaskGenerationResult } from '@/app/api/project-suggestions/generateTask';
+import { FormDataObject, validate } from '@/app/api/project-suggestions/validate';
 import { useProjectSuggestions } from '@/scripts/project/suggestions/useProjectSuggestions';
 import { ZodError } from 'zod';
 import { formDataToObject } from '@/scripts/formDataToObject';
@@ -41,7 +41,7 @@ const Form: FunctionComponent<Props> = () => {
       setFormDataState(formDataToObject(formData));
       setCollapsed(true);
 
-      const response = await fetch('/api/generate/project-suggestions', {
+      const response = await fetch('/api/project-suggestions', {
         method: 'POST',
         body: formData
       });

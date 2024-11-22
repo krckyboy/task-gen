@@ -1,5 +1,5 @@
 import { NextRequest } from 'next/server';
-import { generateTasks } from '@/app/api/generate/project-suggestions/generateTask';
+import { generateTasks } from '@/app/api/project-suggestions/generateTask';
 
 export async function POST(request: NextRequest) {
   try {
