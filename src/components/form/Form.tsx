@@ -26,10 +26,10 @@ const Form: FunctionComponent<Props> = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
+    const formData = new FormData(e.currentTarget) as FormData;
 
     try {
-      const { error } = validate(formData as FormData);
+      const { error } = validate(formData);
 
       if (error && error instanceof ZodError) {
         const e = error as ZodError;
